@@ -6,11 +6,13 @@ Created on Tue Nov 28 22:59:53 2017
 """
 import Tkinter as tk
 from BeautifulSoup import BeautifulStoneSoup as Soup
-from gui2 import guiClass 
+#import gui2 
+from gui2 import guiClass
+from pydoc import gui
 
 root= tk.Tk()
 gui= guiClass(root)
-root.mainloop()
+gui.pack(side="top", fill="both", expand=True)
 
 xml = """
   <menu id="main">
@@ -46,7 +48,7 @@ choice3 = soup.menu.choice3
 Start user choice logic flow.
 """
 
-userChoice= gui.sendInput(gui)
+userChoice= gui.sendInput()
 print userChoice
 if userChoice == 1:
     choice1['next'] = 'Thank you for your new reservation!'
@@ -60,3 +62,5 @@ else:
 Show updated XML file.
 """
 print soup
+
+root.mainloop()
