@@ -34,6 +34,8 @@ xml = """
    </menu>
 
 """
+root.mainloop()
+
 """
 Start XML manipulation section.
 """
@@ -48,19 +50,16 @@ choice3 = soup.menu.choice3
 Start user choice logic flow.
 """
 
-userChoice= gui.sendInput()
-print userChoice
-if userChoice == 1:
-    choice1['next'] = 'Thank you for your new reservation!'
-elif userChoice == 2:
+userChoice = str(gui.sendInput())
+if userChoice == "1":
+    choice1['next1'] = 'Thank you for your new reservation!'
+elif userChoice == "2":
     choice2['next2'] = 'Thank you for changing your reservation!' 
-elif userChoice == 3:
+elif userChoice == "3":
     choice3['next3'] = 'Searching restaurants in your area!' 
 else:
-    print "No choice selected. Hanging up."
+    print "Invalid choice. Hanging up."
 """
 Show updated XML file.
 """
 print soup
-
-root.mainloop()

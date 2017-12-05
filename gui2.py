@@ -16,7 +16,7 @@ class guiClass(tk.Frame):
         self.e1= tk.Entry(self)
         self.e1.grid(row=1, column=1)
         
-        button1= tk.Button(self, text= "Submit", command= self.setInput)
+        button1 = tk.Button(self, text = "Submit", command= self.setInput)
         button1.grid(row=2)
         #command= self.setInput
         
